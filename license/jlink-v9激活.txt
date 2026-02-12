@@ -1,0 +1,27 @@
+# JLINK command
+
+Exec SetSN=XXXXXXXX      # SN 
+Exec AddFeature GDB      # GDB 
+Exec AddFeature RDI      # RDI 
+Exec AddFeature FlashBP  # FlashBP  
+Exec AddFeature FlashDL  # FlashDL 
+Exec AddFeature JFlash   # JFlash 
+Exec AddFeature RDDI     # RDDI
+
+ v9.5 29534567
+ v9.6 20684568  63630332
+
+Exec SetSN=20281318 V9.2
+Exec SetSN=20381318 V9.3
+Exec SetSN=20481318 V9.4
+Exec SetSN=20581318 V9.5
+Exec SetSN=20681318 V9.6
+Exec SetSN=20781318 V9.7
+Exec SetSN=20881318 V9.6
+Exec SetSN=20981318 V9.2
+
+新版驱动的克隆弹窗分支条件:
+0 序列号不能为黑名单里面的那几个。
+1 新型号不能内置GDBFull，有了直接报错。
+2 所有型号不能内置RDDI，有了直接报错。
+3 硬件版本v9~v11并且序列号开头为26,5,82的，和版本号v1并且序列号开头为80的，不许内置JFlash或RDI特性。
