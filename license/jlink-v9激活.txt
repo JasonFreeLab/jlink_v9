@@ -26,3 +26,24 @@ Exec SetSN=20981318 V9.2
 1 新型号不能内置GDBFull，有了直接报错。
 2 所有型号不能内置RDDI，有了直接报错。
 3 硬件版本v9~v11并且序列号开头为26,5,82的，和版本号v1并且序列号开头为80的，不许内置JFlash或RDI特性。
+
+
+适合JlinkV9
+硬件的硬件是根据标准标准计算的。
+如果 SN = 20180904，则 HW = SN / 100000（四舍五入）= 201，然后除以 10 取小数 = 20.10，则硬件硬件 HW 为 V9.10
+如果 SN = 20280904，则 HW = SN / 100000（四舍五入）= 202，然后除以 10 取小数 = 20.20，则硬件硬件硬件为 V9.20
+如果 SN = 20380904，则 HW = SN / 1000000（四舍五入）= 203，然后除以 10 取小数 = 20.30，则硬件硬件 HW 为 V9.30
+如果 SN = 20480904，则 HW = SN / 1000000（四舍五入）= 204，然后除以 10 取小数点 = 20.40，则硬件 HW 为 V9.40
+如果 SN = 20580904，则 HW = SN / 1000000（四舍五入）= 205，然后除以 10 取小数 = 20.50，则硬件硬件 HW 为 V9.50
+
+在 JLINK 命令提示符中，执行以下命令
+
+Exec SetSN=XXXXXXXX; 添加SN
+Exec AddFeature GDB; 添加GDB
+Exec AddFeature RDI; 添加RDI
+Exec AddFeature FlashBP; 添加FlashBP
+Exec AddFeature FlashDL; 添加FlashDL
+Exec AddFeature JFlash; 添加JFlash
+Exec AddFeature RDDI; 添加RDDI
+
+JLink-V9独家添加命令的功能！
